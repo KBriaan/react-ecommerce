@@ -13,7 +13,7 @@ password:{
     type:String, required:true
 },
 isAdmin:{
-type:boolean, default:false
+type:Boolean, default:false
 },
 
 },
