@@ -3,7 +3,9 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-const userRouter =require("./routes/user")
+const userRoute =require("./routes/user")
+const authRoute =require("./routes/auth")
+
 dotenv.config();
 
 mongoose
@@ -13,7 +15,10 @@ mongoose
     console.log(err);
   });
 app.use(express.json());
-  app.use("/api/users", userRouter)
+
+app.use("/api/auth", userRoute);
+
+  app.use("/api/users", userRoute);
 
 
 app.get("/", (req, res) => {
