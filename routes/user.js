@@ -4,10 +4,10 @@ router.get("/usertest", (req, res)=>{
     res.send("user test is successful")
 });
 
-router.post("userposttest", (req, res)=>{
-    const username = req.body.username
-    console.log(username)
-})
+router.post("/usersposttest", (req, res)=>{
+    const username = req.body.username;
+    console.log("your username is:" +username);
+});
 
 
 module.exports= router

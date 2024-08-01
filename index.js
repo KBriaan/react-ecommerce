@@ -12,8 +12,8 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
-
-  app.use("/api/user", userRouter)
+app.use(express.json());
+  app.use("/api/users", userRouter)
 
 
 app.get("/", (req, res) => {
