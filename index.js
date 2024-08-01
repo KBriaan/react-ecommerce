@@ -12,13 +12,15 @@ mongoose
     console.log(err);
   });
 
-  app.get("/api/test", ()=>{
-    console.log("test is successful")
-  })
+  app.get("/api/test", (req, res) => {
+    console.log("test is successful");
+    res.send("Test is successful");
+  });
 
 
 
-const PORT = process.env.PORT || 5000;
-app.listen( process.env.PORT || 5000, () => {
+const PORT = process.env.PORT || 8000;
+
+app.listen( process.env.PORT || 8000, () => {
   console.log("Backend server is running...");
 })
