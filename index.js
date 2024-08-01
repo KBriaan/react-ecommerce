@@ -3,6 +3,7 @@ const app = express();
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
+const userRouter =require("./routes/user")
 dotenv.config();
 
 mongoose
@@ -12,11 +13,12 @@ mongoose
     console.log(err);
   });
 
-  app.get("/api/test", (req, res) => {
-    console.log("test is successful");
-    res.send("Test is successful");
-  });
+  app.use("/api/user", userRouter)
 
+
+app.get("/", (req, res) => {
+  res.send("Server is working");
+})
 
 
 const PORT = process.env.PORT || 8000;
